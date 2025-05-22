@@ -1,0 +1,148 @@
+body {
+    background-image: url(img_food/fon_1.jpg);
+    
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+
+}
+
+
+.container div {
+    width: 28%;
+    min-width: 100px;
+    height: 18%;
+    border: 1px solid silver;
+    border-radius: 20px;
+    float: left;
+    margin: 2%;
+    font-weight: bold;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    background-size: 28%;
+
+}
+
+.container .food:active {
+    transform: translate(2%);
+    color: #009c0d8a;
+    box-shadow: 1px 1px 3px inset rgba(225, 204, 204, 0.593);
+}
+
+.container p {
+    margin-top: 65%;
+    font-size: 90%;
+    
+}
+
+.one {
+    background: url(img_food/icon_1.png) no-repeat center;
+
+}
+
+.two {
+    background: url(img_food/icon_2.png) no-repeat center;
+}
+
+.three {
+    background: url(img_food/icon_3.png) no-repeat center;
+}
+
+.four {
+    background: url(img_food/icon_4.png) no-repeat center;
+}
+
+.five {
+    background: url(img_food/icon_5.png) no-repeat center;
+}
+
+.six {
+    background: url(img_food/icon_6.png) no-repeat center;
+}
+
+.seven {
+    background: url(img_food/icon_7.png) no-repeat center;
+}
+
+.eight {
+    background: url(img_food/icon_8.png) no-repeat center;
+}
+
+.food:hover {
+    background-color: rgba(72, 217, 96, 0.13);
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 3px  rgba(225, 204, 204, 0.764);
+    transition-duration: .1s
+}
+
+.container a {
+    display: block;
+    width: 100%;
+}
+
+body .information {
+    margin: 2%;
+    width: 93%;
+    min-width: 180px;
+    height: 10%;
+    border: 1px solid silver;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(225, 204, 204);
+    cursor: default;
+
+}
+
+.information p {
+    margin: 0 auto;
+    padding: 0 1% 2% 1%;
+    font-size: 85%;
+
+}
+
+
+/*.information:hover {
+    border: 1px solid green;
+    transform: scale(1.1);
+    transition-duration: .3s;
+}*/
+
+h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 200%;
+    font-style: normal;
+    letter-spacing: 12px;
+    text-align: center;
+    color: rgb(225, 204, 204);
+}
+h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    font-style: normal;
+    letter-spacing: 8px;
+    text-align: center;
+    color: rgb(177, 156, 156);
+}
+h3 {
+    font-size: 90%;
+}
+h5{
+    color: rgb(225, 204, 204);
+    text-align: left;
+    display: inline-block;
+}
+
+ul {
+text-align: left;
+font-size: 100%;
+margin: 1%;
+}
+
+.perenos  {
+display: inline !important;
+}
