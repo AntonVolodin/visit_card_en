@@ -1,0 +1,13 @@
+stages:
+  - build
+
+build_job:
+  stage: build
+  script:
+    - echo "Собираю HTML + CSS проект"
+    - mkdir dist
+    - cp index.html dist/
+    - cp style.css dist/
+  artifacts:
+    paths:
+      - dist
