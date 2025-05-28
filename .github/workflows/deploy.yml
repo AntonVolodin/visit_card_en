@@ -21,6 +21,7 @@ jobs:
           mkdir dist
           cp index.html dist/
           cp style.css dist/
+          cp -r img_food dist/
 
       # Шаг 3: Деплой на GitHub Pages
       - name: Деплой на GitHub Pages
