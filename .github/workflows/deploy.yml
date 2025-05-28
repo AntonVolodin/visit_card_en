@@ -1,10 +1,9 @@
-# Название процесса, будет отображаться во вкладке Actions
-name: Деплой HTML сайта на GitHub Pages
+name: Deploy HTML site to GitHub Pages
 
-# Триггер: выполнять при пуше в ветку main
 on:
   push:
-    branches: [main]
+    branches:
+      - main  # Запуск при пуше в ветку main
 
 jobs:
   deploy:
