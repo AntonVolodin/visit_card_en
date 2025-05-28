@@ -3,7 +3,7 @@ name: Deploy HTML site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Запуск при пуше в ветку main
+      - main  # запуск workflow при пуше в ветку main
 
 jobs:
   deploy:
@@ -27,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # встроенный секретный токен GitHub
-          publish_dir: ./dist  # папка, которую нужно опубликовать
+          publish_dir: ./dist                        # папка, которую нужно опубликовать
