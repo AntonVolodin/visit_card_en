@@ -24,6 +24,16 @@ jobs:
           pip install -r requirements.txt
           pip install allure-pytest
 
+      - name: Install Allure commandline
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jre
+          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.27.0.tgz
+          tar -zxvf allure-2.27.0.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          allure --version
+
       - name: Run pytest with Allure
         run: |
           pytest tests/test_ui_site_pdf.py --alluredir=allure-results
@@ -33,8 +43,7 @@ jobs:
           allure generate allure-results -o allure-report --clean
 
       - name: Zip Allure HTML report
-        run: |
-          zip -r allure-report.zip allure-report
+        run: zip -r allure-report.zip allure-report
 
       - name: Upload HTML report as artifact
         uses: actions/upload-artifact@v4
