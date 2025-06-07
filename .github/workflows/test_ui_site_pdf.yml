@@ -1,27 +1,31 @@
-name: Run UI Tests and Generate Allure Report
+name: Run UI Tests and Generate Allure Report  # Название workflow
 
 on:
-  push:
+  push:  # Запуск при push в репозиторий
 
 jobs:
   ui-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Используется виртуальная машина Ubuntu
 
     steps:
+      # Шаг 1: Клонирование репозитория
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Шаг 2: Установка Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
+      # Шаг 3: Установка зависимостей проекта
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install allure-pytest
 
+      # Шаг 4: Установка Allure CLI
       - name: Install Allure commandline
         run: |
           sudo apt-get update
@@ -32,15 +36,19 @@ jobs:
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
           allure --version
 
+      # Шаг 5: Запуск тестов с генерацией результатов для Allure
       - name: Run pytest with Allure
         run: pytest tests/test_ui_site_pdf.py --alluredir=allure-results
 
+      # Шаг 6: Генерация Allure-отчета
       - name: Generate Allure report
         run: allure generate allure-results -o allure-report --clean
 
+      # Шаг 7: Архивация HTML-отчета
       - name: Zip Allure HTML report
         run: zip -r allure-report.zip allure-report
 
+      # Шаг 8: Загрузка отчета как артефакт
       - name: Upload HTML report as artifact
         uses: actions/upload-artifact@v4
         with:
