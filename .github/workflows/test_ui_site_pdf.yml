@@ -2,8 +2,6 @@ name: Run UI Tests and Generate Allure Report
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   ui-tests:
@@ -11,12 +9,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
@@ -28,25 +26,23 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-11-jre
-          wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.27.0.tgz
+          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
           tar -zxvf allure-2.27.0.tgz
           sudo mv allure-2.27.0 /opt/allure
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
           allure --version
 
       - name: Run pytest with Allure
-        run: |
-          pytest tests/test_ui_site_pdf.py --alluredir=allure-results
+        run: pytest tests/test_ui_site_pdf.py --alluredir=allure-results
 
       - name: Generate Allure report
-        run: |
-          allure generate allure-results -o allure-report --clean
+        run: allure generate allure-results -o allure-report --clean
 
       - name: Zip Allure HTML report
         run: zip -r allure-report.zip allure-report
 
       - name: Upload HTML report as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: allure-report
           path: allure-report.zip
