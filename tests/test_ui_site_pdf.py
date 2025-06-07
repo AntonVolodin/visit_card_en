@@ -9,7 +9,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-DOWNLOAD_DIR = os.path.join(os.getcwd(), "downloads")  # папка для загрузок
+# Папка для загрузки
+DOWNLOAD_DIR = os.path.join(os.getcwd(), "downloads")
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)  # создаём, если не существует
 
 @allure.title("Клик на PDF и проверка загрузки")
 def test_click_pdf_and_check_download():
@@ -19,7 +21,8 @@ def test_click_pdf_and_check_download():
         "download.prompt_for_download": False,
         "plugins.always_open_pdf_externally": True
     })
-    # 🔽 ЭТО ОБЯЗАТЕЛЬНО ДЛЯ CI!
+
+    # Аргументы для запуска в CI
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
