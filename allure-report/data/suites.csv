@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","13729","Клик на PDF и проверка загрузки","tests","Sat Jun 07 09:33:08 MSK 2025","passed","Sat Jun 07 09:33:22 MSK 2025","","test_ui_site_pdf","",""

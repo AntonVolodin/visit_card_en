@@ -2,7 +2,8 @@ name: Run UI Tests and Generate Allure Report
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   ui-tests:
@@ -21,18 +22,21 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install allure-pytest
 
       - name: Run pytest with Allure
         run: |
           pytest tests/test_ui_site_pdf.py --alluredir=allure-results
 
-      - name: Generate Allure report as zip
+      - name: Generate Allure report
         run: |
-          mkdir -p allure-report
-          cp -r allure-results allure-report/allure-results
+          allure generate allure-results -o allure-report --clean
+
+      - name: Zip Allure HTML report
+        run: |
           zip -r allure-report.zip allure-report
 
-      - name: Upload zipped report artifact
+      - name: Upload HTML report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
