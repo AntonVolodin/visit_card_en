@@ -105,6 +105,14 @@ body .information {
 
 }
 
+.information ul {
+    text-align: left;
+    padding: 0 1rem; /* Равные отступы слева и справа */
+    list-style: none;
+    font-size: 92%;
+    box-sizing: border-box;
+}
+
 
 /*.information:hover {
     border: 1px solid green;
