@@ -1,6 +1,6 @@
 {
   "name": "Anton_PWA",
-  "short_name": "VisitCard",
+  "short_name": "Anton_PWA",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
