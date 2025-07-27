@@ -31,7 +31,7 @@ def test_click_pdf_and_check_download():
     driver.maximize_window()
 
     with allure.step("Открываем сайт"):
-        driver.get("https://antonvolodin.github.io/visit_card_1/")
+        driver.get("https://antonvolodin.github.io/visit_card_en/")
         time.sleep(2)
 
     with allure.step("Кликаем по ссылке PDF"):
