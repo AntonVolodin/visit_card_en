@@ -1,11 +1,11 @@
 body {
     margin: 0;
     background-image: url(img_food/fon_1.jpg);
-    color: whitesmoke;
+    color:brown;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================= HEADER ================= */
+/*  HEADER  */
 
 .header {
     width: 75%;
@@ -37,7 +37,7 @@ body {
     text-decoration: underline;
 }
 
-/* ================= GRID ================= */
+/*  GRID */
 
 
 .container {
@@ -69,7 +69,7 @@ body {
     box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
-/* ================= INFO BLOCKS ================= */
+/* INFO BLOCKS */
 
 .information {
     grid-column: 1 / -1;
