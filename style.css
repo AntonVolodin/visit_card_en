@@ -39,6 +39,7 @@ body {
 
 /* ================= GRID ================= */
 
+
 .container {
     width: 75%;
     margin: 0 auto 60px auto;
@@ -60,6 +61,7 @@ body {
     text-decoration: none;
     color: whitesmoke;
     transition: 0.2s ease;
+    background-color: rgba(128, 128, 128, 0.221);
 }
 
 .card:hover {
