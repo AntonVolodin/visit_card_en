@@ -1,156 +1,121 @@
 body {
+    margin: 0;
     background-image: url(img_food/fon_1.jpg);
-    
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ================= HEADER ================= */
+
+.header {
+    width: 75%;
+    margin: 0 auto;
+    padding: 50px 0 30px 0;
+}
+
+.header h1 {
+    text-align: center;
+    letter-spacing: 6px;
+    font-size: 28px;
+    margin: 0;
+}
+
+.header h2 {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #aaa;
+    margin: 20px 0 30px 0;
+}
+
+.header h5 {
+    margin: 0;
+}
+
+.perenos {
+    color: #6c8cff;
+    text-decoration: underline;
+}
+
+/* ================= GRID ================= */
 
 .container {
-    width: 70%;
-    margin: 0 auto;
-
+    width: 75%;
+    margin: 0 auto 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
+/* карточки */
 
-.container div {
-    width: 28%;
-    min-width: 100px;
-    height: 18%;
-    border: 1px solid silver;
-    border-radius: 20px;
-    float: left;
-    margin: 2%;
+.card {
+    height: 180px;
+    border: 1px solid #666;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
-    background-size: 28%;
-
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 0.2s ease;
 }
 
-.container .food:active {
-    transform: translate(2%);
-    color: #009c0d8a;
-    box-shadow: 1px 1px 3px inset rgba(225, 204, 204, 0.593);
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
-.container p {
-    margin-top: 60%;
-    font-size: 90%;
-    
+/* ================= INFO BLOCKS ================= */
+
+.information {
+    grid-column: 1 / -1;
+    padding: 30px;
+    border: 1px solid #666;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
 }
 
-.one {
-    background: url(img_food/icon_1.png) no-repeat center;
-
-}
-
-.two {
-    background: url(img_food/icon_2.png) no-repeat center;
-}
-
-.three {
-    background: url(img_food/icon_3.png) no-repeat center;
-}
-
-.four {
-    background: url(img_food/icon_4.png) no-repeat center;
-}
-
-.five {
-    background: url(img_food/icon_6.png) no-repeat center;
-}
-
-.six {
-    background: url(img_food/icon_5.png) no-repeat center;
-}
-
-.seven {
-    background: url(img_food/icon_7.png) no-repeat center;
-}
-
-.eight {
-    background: url(img_food/icon_8.png) no-repeat center;
-}
-
-.food:hover {
-    background-color: rgba(72, 217, 96, 0.13);
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 1px 1px 3px  rgba(225, 204, 204, 0.764);
-    transition-duration: .1s
-}
-
-.container a {
-    display: block;
-    width: 100%;
-}
-
-body .information {
-    margin: 2%;
-    width: 92%;
-    min-width: 180px;
-    height: 10%;
-    border: 1px solid silver;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 10%;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    cursor: default;
-
+.information h3 {
+    margin-top: 0;
 }
 
 .information p {
-    margin: 0 auto;
-    padding: 0 1% 2% 1%;
-    font-size: 85%;
-
+    line-height: 1.6;
+    color: #ddd;
 }
 
-.information ul {
-    text-align: left;
-    padding: 0 1rem 1rem 1rem; /* добавлен нижний отступ */
-    list-style: none;
-    font-size: 92%;
-    box-sizing: border-box;
-}
+/* ================= MOBILE ================= */
 
+@media (max-width: 900px) {
 
-/*.information:hover {
-    border: 1px solid green;
-    transform: scale(1.1);
-    transition-duration: .3s;
-}*/
+    .header,
+    .container {
+        width: 92%;
+    }
 
-h1 {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 150%;
-    font-style: normal;
-    letter-spacing: 12px;
-    text-align: center;
-    color:green;
-}
-h2 {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 70%;
-    font-style: normal;
-    letter-spacing: 8px;
-    text-align: center;
-    color: white;
-}
-h3 {
-    font-size: 90%;
-}
-h5{
-    color: rgb(172, 171, 171);
-    text-align: left;
-    display: inline-block;
-}
+    .container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
 
-ul {
-text-align: left;
-font-size: 92%;
-margin: 1%;
-}
+    .card {
+        height: 120px;
+        font-size: 16px;
+    }
 
-.perenos  {
-display: inline !important;
+    .information {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+
+    .header h2 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
 }
